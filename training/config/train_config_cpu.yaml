@@ -1,0 +1,42 @@
+experiment_name: "efficientnet_b0_cpu_fast"
+seed: 42
+
+data:
+  image_size: 224
+  num_folds: 5
+  batch_size: 16
+  num_workers: 0        # Windows multiprocessing workaround
+  manifest_path: "data/manifest.csv"
+  processed_dir: "data/processed"
+  raw_dir: "data/raw"
+
+model:
+  architecture: "efficientnet_b0"
+  pretrained: true
+  num_classes: 2
+  drop_rate: 0.3
+
+training:
+  linear_probe_epochs: 5
+  linear_probe_lr: 1.0e-3
+  finetune_epochs: 20
+  finetune_lr: 1.0e-4
+  weight_decay: 0.01
+  label_smoothing: 0.1
+  early_stop_patience: 5
+  mixed_precision: false   # CPU: no AMP
+  device: "cpu"
+
+output:
+  checkpoint_dir: "outputs/checkpoints"
+  log_dir: "outputs/logs"
+  best_model_name: "efficientnet_b0_asd"
+
+augmentation:
+  horizontal_flip: 0.5
+  rotation_limit: 15
+  brightness_limit: 0.2
+  contrast_limit: 0.2
+  gauss_noise_var: [10, 50]
+  clahe_clip_limit: 2.0
+  coarse_dropout_holes: 8

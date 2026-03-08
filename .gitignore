@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment
+.env
+.env.local
+
+# SQLite database
+*.db
+
+# ML model weights (large files)
+*.onnx
+*.pth
+*.pt
+*.h5
+
+# Storage folders (runtime data)
+backend/storage/uploads/*
+!backend/storage/uploads/.gitkeep
+backend/storage/gradcam/*
+!backend/storage/gradcam/.gitkeep
+backend/storage/models/*
+!backend/storage/models/.gitkeep
+
+# Training data and outputs
+training/data/raw/
+training/data/processed/
+training/data/manifest.csv
+training/outputs/
+training/logs/
+
+# TensorBoard
+runs/
+events.out.tfevents.*
+
+# Node.js
+node_modules/
+npm-debug.log*
+.npm
+
+# Vite build
+frontend/dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini

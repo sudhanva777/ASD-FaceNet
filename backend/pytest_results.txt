@@ -1,0 +1,192 @@
+============================= test session starts =============================
+collecting ... collected 8 items
+
+tests/test_health.py::test_health_no_auth_required ERROR                 [ 12%]
+tests/test_health.py::test_health_response_shape ERROR                   [ 25%]
+tests/test_health.py::test_health_db_connected ERROR                     [ 37%]
+tests/test_health.py::test_health_model_loaded ERROR                     [ 50%]
+tests/test_health.py::test_health_status_healthy ERROR                   [ 62%]
+tests/test_health.py::test_health_inference_device ERROR                 [ 75%]
+tests/test_health.py::test_health_uptime_non_negative ERROR              [ 87%]
+tests/test_health.py::test_health_model_version_format ERROR             [100%]
+
+=================================== ERRORS ====================================
+_______________ ERROR at setup of test_health_no_auth_required ________________
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\pytest_asyncio\plugin.py:728: in pytest_fixture_setup
+    return (yield)
+            ^^^^^
+tests\conftest.py:67: in setup_tables
+    from app.models import user, prediction, audit_log  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app\models\audit_log.py:5: in <module>
+    class AuditLog(Base):
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_api.py:846: in __init_subclass__
+    _as_declarative(cls._sa_registry, cls, cls.__dict__)
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:245: in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:326: in setup_mapping
+    return _ClassScanMapperConfig(
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:573: in __init__
+    self._extract_mappable_attributes()
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:1530: in _extract_mappable_attributes
+    raise exc.InvalidRequestError(
+E   sqlalchemy.exc.InvalidRequestError: Attribute name 'metadata' is reserved when using the Declarative API.
+________________ ERROR at setup of test_health_response_shape _________________
+tests\conftest.py:67: in setup_tables
+    from app.models import user, prediction, audit_log  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app\models\audit_log.py:5: in <module>
+    class AuditLog(Base):
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_api.py:846: in __init_subclass__
+    _as_declarative(cls._sa_registry, cls, cls.__dict__)
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:245: in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:326: in setup_mapping
+    return _ClassScanMapperConfig(
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:573: in __init__
+    self._extract_mappable_attributes()
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:1530: in _extract_mappable_attributes
+    raise exc.InvalidRequestError(
+E   sqlalchemy.exc.InvalidRequestError: Attribute name 'metadata' is reserved when using the Declarative API.
+_________________ ERROR at setup of test_health_db_connected __________________
+tests\conftest.py:67: in setup_tables
+    from app.models import user, prediction, audit_log  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app\models\audit_log.py:5: in <module>
+    class AuditLog(Base):
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_api.py:846: in __init_subclass__
+    _as_declarative(cls._sa_registry, cls, cls.__dict__)
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:245: in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:326: in setup_mapping
+    return _ClassScanMapperConfig(
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:573: in __init__
+    self._extract_mappable_attributes()
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:1530: in _extract_mappable_attributes
+    raise exc.InvalidRequestError(
+E   sqlalchemy.exc.InvalidRequestError: Attribute name 'metadata' is reserved when using the Declarative API.
+_________________ ERROR at setup of test_health_model_loaded __________________
+tests\conftest.py:67: in setup_tables
+    from app.models import user, prediction, audit_log  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app\models\audit_log.py:5: in <module>
+    class AuditLog(Base):
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_api.py:846: in __init_subclass__
+    _as_declarative(cls._sa_registry, cls, cls.__dict__)
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:245: in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:326: in setup_mapping
+    return _ClassScanMapperConfig(
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:573: in __init__
+    self._extract_mappable_attributes()
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:1530: in _extract_mappable_attributes
+    raise exc.InvalidRequestError(
+E   sqlalchemy.exc.InvalidRequestError: Attribute name 'metadata' is reserved when using the Declarative API.
+________________ ERROR at setup of test_health_status_healthy _________________
+tests\conftest.py:67: in setup_tables
+    from app.models import user, prediction, audit_log  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app\models\audit_log.py:5: in <module>
+    class AuditLog(Base):
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_api.py:846: in __init_subclass__
+    _as_declarative(cls._sa_registry, cls, cls.__dict__)
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:245: in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:326: in setup_mapping
+    return _ClassScanMapperConfig(
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:573: in __init__
+    self._extract_mappable_attributes()
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:1530: in _extract_mappable_attributes
+    raise exc.InvalidRequestError(
+E   sqlalchemy.exc.InvalidRequestError: Attribute name 'metadata' is reserved when using the Declarative API.
+_______________ ERROR at setup of test_health_inference_device ________________
+tests\conftest.py:67: in setup_tables
+    from app.models import user, prediction, audit_log  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app\models\audit_log.py:5: in <module>
+    class AuditLog(Base):
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_api.py:846: in __init_subclass__
+    _as_declarative(cls._sa_registry, cls, cls.__dict__)
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:245: in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:326: in setup_mapping
+    return _ClassScanMapperConfig(
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:573: in __init__
+    self._extract_mappable_attributes()
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:1530: in _extract_mappable_attributes
+    raise exc.InvalidRequestError(
+E   sqlalchemy.exc.InvalidRequestError: Attribute name 'metadata' is reserved when using the Declarative API.
+______________ ERROR at setup of test_health_uptime_non_negative ______________
+tests\conftest.py:67: in setup_tables
+    from app.models import user, prediction, audit_log  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app\models\audit_log.py:5: in <module>
+    class AuditLog(Base):
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_api.py:846: in __init_subclass__
+    _as_declarative(cls._sa_registry, cls, cls.__dict__)
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:245: in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:326: in setup_mapping
+    return _ClassScanMapperConfig(
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:573: in __init__
+    self._extract_mappable_attributes()
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:1530: in _extract_mappable_attributes
+    raise exc.InvalidRequestError(
+E   sqlalchemy.exc.InvalidRequestError: Attribute name 'metadata' is reserved when using the Declarative API.
+_____________ ERROR at setup of test_health_model_version_format ______________
+tests\conftest.py:67: in setup_tables
+    from app.models import user, prediction, audit_log  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app\models\audit_log.py:5: in <module>
+    class AuditLog(Base):
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_api.py:846: in __init_subclass__
+    _as_declarative(cls._sa_registry, cls, cls.__dict__)
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:245: in _as_declarative
+    return _MapperConfig.setup_mapping(registry, cls, dict_, None, {})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:326: in setup_mapping
+    return _ClassScanMapperConfig(
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:573: in __init__
+    self._extract_mappable_attributes()
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\sqlalchemy\orm\decl_base.py:1530: in _extract_mappable_attributes
+    raise exc.InvalidRequestError(
+E   sqlalchemy.exc.InvalidRequestError: Attribute name 'metadata' is reserved when using the Declarative API.
+============================== warnings summary ===============================
+app\main.py:47
+  D:\paid projects\ASD-FaceNet\backend\app\main.py:47: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    @app.on_event("startup")
+
+C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\applications.py:4597
+  C:\Users\Sudhanva Patil\AppData\Local\Programs\Python\Python311\Lib\site-packages\fastapi\applications.py:4597: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    return self.router.on_event(event_type)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+ERROR tests/test_health.py::test_health_no_auth_required - sqlalchemy.exc.Inv...
+ERROR tests/test_health.py::test_health_response_shape - sqlalchemy.exc.Inval...
+ERROR tests/test_health.py::test_health_db_connected - sqlalchemy.exc.Invalid...
+ERROR tests/test_health.py::test_health_model_loaded - sqlalchemy.exc.Invalid...
+ERROR tests/test_health.py::test_health_status_healthy - sqlalchemy.exc.Inval...
+ERROR tests/test_health.py::test_health_inference_device - sqlalchemy.exc.Inv...
+ERROR tests/test_health.py::test_health_uptime_non_negative - sqlalchemy.exc....
+ERROR tests/test_health.py::test_health_model_version_format - sqlalchemy.exc...
+======================== 2 warnings, 8 errors in 0.55s ========================
+
+STDERR:
