@@ -43,33 +43,33 @@ ASD-FaceNet is a web application that classifies facial images as **ASD (Autism 
 
 ## Quick Start
 
-### Windows
+### Windows (One-Click)
 
-```
-run_local.bat
-```
+Double-click **`run_local.bat`** — creates the Python venv, installs dependencies, starts both servers, and opens the browser automatically.
 
-### Linux/Mac
-
-```bash
-chmod +x run_local.sh
-./run_local.sh
-```
+To stop everything: double-click **`stop_local.bat`**.
 
 ### Manual
 
 ```bash
-# Backend
-cd backend && python -m venv venv && venv\Scripts\activate
-pip install -r requirements.txt && python run.py
+# Backend (Windows)
+cd backend
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+python run.py
 
 # Frontend (new terminal)
-cd frontend && npm install && npm run dev
+cd frontend
+npm install
+npm run dev
 ```
 
 Open **<http://localhost:5173>** in your browser.
 
-See [SETUP.md](SETUP.md) for detailed instructions.
+> **Model weights required.** Place `efficientnet_b0_asd.onnx` and `efficientnet_b0_asd.pth` in `backend/storage/models/` before starting. Without them the backend starts but returns 503 on `/predict`.
+
+See [SETUP.md](SETUP.md) for full setup, training, and troubleshooting.
 
 ---
 

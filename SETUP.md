@@ -10,11 +10,15 @@
 | Git | Latest | `git --version` |
 | NVIDIA GPU | Optional | Training only; inference runs on CPU |
 
+> **Model weights are not in the repository.** After training (see below), place `efficientnet_b0_asd.onnx` and `efficientnet_b0_asd.pth` in `backend/storage/models/`.
+
 ---
 
 ## Quick Start (Windows)
 
-Double-click `run_local.bat` — it does everything automatically.
+Double-click `run_local.bat` — it creates the virtual environment, installs all dependencies, starts both servers, and opens the browser.
+
+To stop all services: double-click `stop_local.bat`.
 
 ---
 
@@ -96,6 +100,18 @@ python export_onnx.py --checkpoint outputs/checkpoints/efficientnet_b0_asd.pth -
 ```
 
 After export, restart the backend — the model will load automatically.
+
+---
+
+## Running Tests
+
+```bash
+cd backend
+venv\Scripts\activate
+pytest tests/ -v
+```
+
+Tests use an in-memory SQLite database and a mocked ML engine — no model weights needed.
 
 ---
 
