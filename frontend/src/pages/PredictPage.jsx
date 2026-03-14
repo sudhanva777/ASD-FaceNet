@@ -3,6 +3,7 @@ import client from '../api/client'
 import GlassCard from '../components/GlassCard'
 import Disclaimer from '../components/Disclaimer'
 import ConfidenceRing from '../components/ConfidenceRing'
+import ReportModal from '../components/ReportModal'
 
 export default function PredictPage() {
     const [file, setFile] = useState(null)
@@ -11,6 +12,7 @@ export default function PredictPage() {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState('')
     const [drag, setDrag] = useState(false)
+    const [showReport, setShowReport] = useState(false)
     const inputRef = useRef(null)
 
     const handleFile = (f) => {
@@ -231,7 +233,22 @@ export default function PredictPage() {
                             </svg>
                             New Prediction
                         </button>
+                        <button
+                            onClick={() => setShowReport(true)}
+                            style={{
+                                padding: '13px 22px', borderRadius: 12, cursor: 'pointer',
+                                fontFamily: "'Outfit'", fontWeight: 600, fontSize: 14,
+                                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+                                background: 'rgba(0,184,150,0.08)', color: '#00b896',
+                                border: '1px solid rgba(0,184,150,0.25)', transition: 'all 0.3s',
+                            }}
+                        >
+                            Generate Report
+                        </button>
                     </div>
+                    {showReport && (
+                        <ReportModal prediction={result} onClose={() => setShowReport(false)} />
+                    )}
                 </div>
             )}
         </div>

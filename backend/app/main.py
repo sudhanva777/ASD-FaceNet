@@ -8,7 +8,7 @@ from slowapi.errors import RateLimitExceeded
 
 from app.config import settings
 from app.database import init_db
-from app.routers import auth, predict, history, health
+from app.routers import auth, predict, history, health, report
 
 limiter = Limiter(key_func=get_remote_address)
 
@@ -43,6 +43,7 @@ def create_app() -> FastAPI:
     app.include_router(predict.router, prefix=settings.API_V1_PREFIX)
     app.include_router(history.router, prefix=settings.API_V1_PREFIX)
     app.include_router(health.router, prefix=settings.API_V1_PREFIX)
+    app.include_router(report.router, prefix=settings.API_V1_PREFIX)
 
     @app.on_event("startup")
     def startup():
